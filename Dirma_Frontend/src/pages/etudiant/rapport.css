@@ -1,0 +1,126 @@
+/* ── Rapport de vérification ── */
+
+.rapport-hero {
+  display: flex;
+  gap: 32px;
+  padding: 28px;
+  align-items: flex-start;
+}
+
+.rapport-hero-left {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rapport-hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Jauge circulaire */
+.jauge-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jauge-center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.jauge-score {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.jauge-label {
+  font-size: 11px;
+  color: var(--gray-500);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Verdict badge */
+.rapport-verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+/* Barres de score */
+.barre-score {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.barre-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.barre-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.barre-poids {
+  font-size: 11px;
+  color: var(--gray-400);
+  margin-left: 4px;
+}
+
+.barre-value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.barre-track {
+  height: 8px;
+  background: var(--gray-100);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barre-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+/* Grille rapport */
+.rapport-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .rapport-hero { flex-direction: column; align-items: center; }
+  .rapport-grid { grid-template-columns: 1fr; }
+}
+
+/* Impression PDF */
+@media print {
+  .sidebar, .topbar, .btn-secondary { display: none !important; }
+  .main-wrapper { margin-left: 0 !important; }
+  .page-content { padding: 0 !important; }
+  .card { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+}

@@ -1,0 +1,205 @@
+.welcome-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-100);
+  padding: 24px;
+}
+
+/* ── Cadre principal ── */
+.welcome-main-card {
+  display: flex;
+  width: 100%;
+  max-width: 820px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(80, 74, 74, 0);
+  gap: 0;
+}
+
+/* ── Cadres enfants (égaux) ── */
+.welcome-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 32px;
+}
+
+/* ── Cadre gauche : fond sombre, logo sans cadre ── */
+.welcome-panel-left {
+  background: linear-gradient(135deg, #1C1C1C 0%, #2d2d2d 60%, #E87722 100%);
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Halo coloré derrière le logo */
+.welcome-panel-left::before {
+  content: '';
+  position: absolute;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 225, 160, 0.25) 0%, rgba(0,240,240,.1) 40%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Accent rose en bas à droite */
+.welcome-panel-left::after {
+  content: '';
+  position: absolute;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,60,120,.18) 0%, transparent 70%);
+  bottom: -40px; right: -40px;
+  pointer-events: none;
+}
+
+.welcome-logo-wrap {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  width: 160px; height: 160px;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.welcome-logo-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-logo-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+  text-align: center;
+  max-width: 160px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+  letter-spacing: .5px;
+}
+
+/* ── Cadre droit : fond blanc, présentation ── */
+.welcome-panel-right {
+  background: #fff;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 40px 36px;
+  overflow-y: auto;
+}
+
+.welcome-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+}
+
+.welcome-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--gray-900);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.welcome-desc {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ── Features ── */
+.welcome-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.welcome-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.welcome-feature-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.welcome-feature-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 2px;
+}
+
+.welcome-feature-desc {
+  font-size: 12px;
+  color: var(--gray-400);
+  line-height: 1.4;
+}
+
+/* ── Actions ── */
+.welcome-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.welcome-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background .2s;
+  text-decoration: none;
+}
+.welcome-btn-primary:hover { background: var(--primary-dark); }
+
+.welcome-btn-secondary {
+  padding: 10px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: all .2s;
+}
+.welcome-btn-secondary:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
+
+@media (max-width: 700px) {
+  .welcome-main-card { flex-direction: column; height: auto; }
+  .welcome-panel-left { padding: 32px; }
+}

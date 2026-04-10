@@ -1,0 +1,77 @@
+/* ── Layout ── */
+.analyse-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ── Étapes ── */
+.analyse-etapes { min-width: 0; }
+
+.etape-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-100);
+  transition: all .2s;
+}
+.etape-item:last-child { border-bottom: none; }
+
+.etape-icone {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+  transition: all .3s;
+}
+
+.etape-item.done   .etape-icone { background: #d1fae5; color: var(--success); }
+.etape-item.active .etape-icone { background: #dbeafe; color: var(--info); }
+.etape-item.pending .etape-icone { background: var(--gray-100); color: var(--gray-400); }
+
+.etape-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gray-300);
+}
+
+.etape-contenu { flex: 1; }
+.etape-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-700);
+  display: block;
+}
+.etape-item.done   .etape-label { color: var(--gray-800); }
+.etape-item.active .etape-label { color: var(--info); font-weight: 600; }
+.etape-item.pending .etape-label { color: var(--gray-400); }
+
+.etape-status {
+  font-size: 11px;
+  color: var(--info);
+  margin-top: 2px;
+  display: block;
+}
+.etape-status.done { color: var(--success); }
+
+/* ── Spinner analyse ── */
+.analyse-spinner {
+  width: 64px; height: 64px;
+  border: 5px solid var(--gray-200);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+
+/* ── Résultats ── */
+.analyse-resultats { min-width: 0; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .analyse-layout {
+    grid-template-columns: 1fr;
+  }
+}
